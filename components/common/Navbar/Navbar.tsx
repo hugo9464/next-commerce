@@ -15,6 +15,9 @@ const Navbar: FC = () => (
               <Logo />
             </a>
           </Link>
+        </div>
+
+        <div className="justify-center flex-1 hidden lg:flex">
           <nav className="hidden ml-6 space-x-4 lg:block">
             <Link href="/search">
               <a className={s.link}>All</a>
@@ -29,10 +32,6 @@ const Navbar: FC = () => (
               <a className={s.link}>Shoes</a>
             </Link>
           </nav>
-        </div>
-
-        <div className="justify-center flex-1 hidden lg:flex">
-          <Searchbar />
         </div>
 
         <div className="flex justify-end flex-1 space-x-8">

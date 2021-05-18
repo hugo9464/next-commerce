@@ -32,6 +32,8 @@ const getAllProducts = async (options: {
       normalizeProduct(p)
     ) ?? []
 
+  console.log('toto')
+
   return {
     products,
   }
