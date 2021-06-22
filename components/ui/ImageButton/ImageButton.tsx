@@ -2,6 +2,7 @@ import * as React from 'react'
 import { styled } from '@material-ui/core/styles'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import Typography from '@material-ui/core/Typography'
+import Link from 'next/link'
 
 const images = [
   {
@@ -87,31 +88,32 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function ImageButton(props: { link: any }) {
   return (
-    <ImageButtonBase
-      focusRipple
-      style={{
-        width: '100%',
-      }}
-      href={props.link.destination}
-    >
-      <ImageSrc style={{ backgroundImage: `url(${props.link.url})` }} />
-      <ImageBackdrop className="MuiImageBackdrop-root" />
-      <Image>
-        <Typography
-          component="span"
-          variant="subtitle1"
-          color="inherit"
-          sx={{
-            position: 'relative',
-            p: 4,
-            pt: 2,
-            pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-          }}
-        >
-          {props.link.title}
-          <ImageMarked className="MuiImageMarked-root" />
-        </Typography>
-      </Image>
-    </ImageButtonBase>
+    <Link href={props.link.destination}>
+      <ImageButtonBase
+        focusRipple
+        style={{
+          width: '100%',
+        }}
+      >
+        <ImageSrc style={{ backgroundImage: `url(${props.link.url})` }} />
+        <ImageBackdrop className="MuiImageBackdrop-root" />
+        <Image>
+          <Typography
+            component="span"
+            variant="subtitle1"
+            color="inherit"
+            sx={{
+              position: 'relative',
+              p: 4,
+              pt: 2,
+              pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+            }}
+          >
+            {props.link.title}
+            <ImageMarked className="MuiImageMarked-root" />
+          </Typography>
+        </Image>
+      </ImageButtonBase>
+    </Link>
   )
 }
