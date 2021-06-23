@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import { Logo, Container } from '@components/ui'
-import { Searchbar, UserNav } from '@components/common'
+import { UserNav } from '@components/common'
 import NavbarRoot from './NavbarRoot'
 import s from './Navbar.module.css'
 
@@ -31,10 +31,6 @@ const Navbar: FC = () => (
         <div className="flex justify-end flex-1 space-x-8">
           <UserNav />
         </div>
-      </div>
-
-      <div className="flex pb-4 lg:px-6 lg:hidden">
-        <Searchbar id="mobile-search" />
       </div>
     </Container>
   </NavbarRoot>
