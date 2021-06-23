@@ -32,9 +32,14 @@ export async function getStaticProps({
   locale,
 }: GetStaticPropsContext) {
   const config = getConfig({ locale })
+  const { pages } = await getAllPages({ config, preview })
+
   const { categories } = await getAllCollections({ config, preview })
   return {
-    props: { categories },
+    props: {
+      pages,
+      categories,
+    },
   }
 }
 
