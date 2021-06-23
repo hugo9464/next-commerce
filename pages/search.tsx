@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
-import { Container, Grid, Skeleton } from '@components/ui'
+import { Container, Skeleton } from '@components/ui'
 
 import { getConfig } from '@framework/api'
 import useSearch from '@framework/product/use-search'
@@ -339,33 +339,6 @@ export default function Search({
                 <>Searching...</>
               )}
             </div>
-          )}
-
-          {data ? (
-            <Grid layout="normal">
-              {data.products.map((product: Product) => (
-                <ProductCard
-                  variant="simple"
-                  key={product.path}
-                  className="animated fadeIn"
-                  product={product}
-                  imgProps={{
-                    width: 480,
-                    height: 480,
-                  }}
-                />
-              ))}
-            </Grid>
-          ) : (
-            <Grid layout="normal">
-              {rangeMap(12, (i) => (
-                <Skeleton
-                  key={i}
-                  className="w-full animated fadeIn"
-                  height={325}
-                />
-              ))}
-            </Grid>
           )}
         </div>
 
