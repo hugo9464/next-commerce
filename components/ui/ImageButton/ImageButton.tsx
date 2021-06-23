@@ -86,16 +86,20 @@ const ImageMarked = styled('span')(({ theme }) => ({
   transition: theme.transitions.create('opacity'),
 }))
 
-export default function ImageButton(props: { link: any }) {
+export default function ImageButton(props: {
+  title: string
+  image: string
+  destination: string
+}) {
   return (
-    <Link href={props.link.destination}>
+    <Link href={props.destination}>
       <ImageButtonBase
         focusRipple
         style={{
           width: '100%',
         }}
       >
-        <ImageSrc style={{ backgroundImage: `url(${props.link.url})` }} />
+        <ImageSrc style={{ backgroundImage: `url(${props.image})` }} />
         <ImageBackdrop className="MuiImageBackdrop-root" />
         <Image>
           <Typography
@@ -109,7 +113,7 @@ export default function ImageButton(props: { link: any }) {
               pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
             }}
           >
-            {props.link.title}
+            {props.title}
             <ImageMarked className="MuiImageMarked-root" />
           </Typography>
         </Image>

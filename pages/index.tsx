@@ -7,7 +7,26 @@ import getAllProducts from '@framework/product/get-all-products'
 import getSiteInfo from '@framework/common/get-site-info'
 import getAllPages from '@framework/common/get-all-pages'
 import React from 'react'
-import HomeNavGrid from '@components/ui/HomeNavGrid/HomeNavGrid'
+import NavGrid from '@components/ui/NavGrid/NavGrid'
+import { Container } from '@components/ui'
+
+const links = [
+  {
+    url: '/decor.jpeg',
+    title: 'SHOP',
+    destination: '/shop',
+  },
+  {
+    url: '/lampes.jpeg',
+    title: 'ASSEMBLAGE',
+    destination: '/assemblage',
+  },
+  {
+    url: '/maro3.jpeg',
+    title: 'ART',
+    destination: '/art',
+  },
+]
 
 export async function getStaticProps({
   preview,
@@ -42,7 +61,9 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <HomeNavGrid />
+      <Container>
+        <NavGrid links={links} />
+      </Container>
     </>
   )
 }

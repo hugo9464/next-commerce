@@ -14,10 +14,13 @@ const getAllCollections = async (options?: {
   const edges = data.collections?.edges ?? []
 
   const categories = edges.map(
-    ({ node: { id: entityId, title: name, handle } }: CollectionEdge) => ({
+    ({
+      node: { id: entityId, title: name, handle, image },
+    }: CollectionEdge) => ({
       entityId,
       name,
       path: `/${handle}`,
+      image,
     })
   )
 

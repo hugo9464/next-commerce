@@ -6,6 +6,9 @@ const getSiteCollectionsQuery = /* GraphQL */ `
           id
           title
           handle
+          image {
+            src
+          }
         }
       }
     }
