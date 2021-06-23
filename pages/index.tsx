@@ -1,5 +1,4 @@
 import { Layout } from '@components/common'
-// import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
 import { getConfig } from '@framework/api'
