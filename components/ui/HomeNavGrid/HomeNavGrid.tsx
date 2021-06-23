@@ -24,7 +24,7 @@ const links = [
 
 export default function HomeNavGrid() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={5}>
       {links.map((link: any) => (
         <Grid item xs={12} sm={6} alignContent="center">
           <ImageButton link={link} />
