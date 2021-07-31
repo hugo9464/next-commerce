@@ -54,7 +54,7 @@ export default function Shop({
           <Grid item xs={12} sm={6} alignContent="center">
             <ImageButton
               title={category.name}
-              destination={category.path}
+              destination={'/shop' + category.path}
               image={category.image.src}
             />
           </Grid>

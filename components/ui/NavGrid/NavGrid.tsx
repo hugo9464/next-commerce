@@ -8,7 +8,7 @@ export default function NavGrid(props: { links: any[] }) {
   return (
     <Grid container spacing={5}>
       {props.links.map((link: any) => (
-        <Grid item xs={12} sm={6} alignContent="center">
+        <Grid item xs={12} sm={6} alignContent="center" key={link.title}>
           <ImageButton
             title={link.title}
             destination={link.destination}
